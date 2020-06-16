@@ -1,15 +1,17 @@
 def solution(citations):
+
     num = len(citations)
-    answer = 0
-    for i in range(1,num+1,1):
-        print(i)
-        cite = 0
-        for j in range(num):
-            if(citations[j]>=i):
-                cite = cite + 1
-        if(cite>=i):
-            answer = i
+    cite = 1
 
+    while(citations):
+        number = 0
+        for i in range(num):           
+            if(citations[i]>=cite):               
+                number = number + 1
+        if(number>=cite):
+            cite = cite + 1
+        else:
+            return cite - 1
             
-    return answer
 
+print(solution([2,2,2,2,2]))              
